@@ -1,0 +1,31 @@
+.loader{
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    top: 0; bottom: 0; right: 0; left: 0;
+    background: rgb(194, 194, 194);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: all ease-out 1s;
+}
+.logo-img{
+    height: 10vh;
+    opacity: 0.8;
+    animation: glow alternate 1s infinite 200ms;
+}
+@keyframes glow {
+    from{
+        opacity: 0.5;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.transparent{
+    opacity: 0;
+}
+.hidden{
+    display: none;
+}

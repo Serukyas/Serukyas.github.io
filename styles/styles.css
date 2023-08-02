@@ -1,0 +1,306 @@
+@font-face {
+    font-family: Couture;
+    src: url("../assets/couture-bld.otf") format("opentype");
+}
+@font-face {
+    font-family: Gebril;
+    src: url("../assets/gerbil.otf") format("opentype");
+}
+@font-face {
+    font-family: Thunder;
+    src: url("../assets/Thunder-SemiBoldHC.otf") format("opentype");
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #909090;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(59, 59, 59);
+}
+
+body{
+    background: rgb(194, 194, 194);
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+}
+.img{
+    height: 100%;
+    min-width: 100%;
+    transition: all 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.img-container{
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: 10;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.size_1{
+    width: 360px;
+    height: 560px;
+}
+.size_2{
+    width: 560px;
+    height: 320px;
+}
+.card{
+    background-position: center;
+    background-size: cover;
+    transition: all 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 30px;
+    background-color: #3c6e71;
+}
+.card:hover .img{
+    transform: scale(1.5);
+    box-shadow: -5px -5px -5px rgba(0, 0, 0, 0.3);
+}
+.card:hover .img-container{
+    top: 15px; right: 15px; left: 15px; bottom: 15px;
+}
+.card:hover .info{
+    transform: scale(1);
+    opacity: 1;
+}
+.tilting-card{
+    position: absolute;
+    z-index: 100;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    cursor: pointer;
+}
+.square{
+    justify-self: stretch;
+    align-self: stretch;
+}
+
+.info{
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0; right: 0; left: 0; bottom: 0;
+
+    z-index: 50;
+    padding: 40px;
+    transform: scale(1.3);
+    opacity: 0;
+    transition: all 425ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.info > *{
+    margin: 12.5px;
+    text-align: center;
+}
+.info .title{
+    font-family: Couture;
+    font-size: 30px;
+}
+.info .subtitle{
+    font-weight: 200;
+    font-size: 15px;
+}
+.info .btn{
+    text-decoration: underline;
+    justify-self: baseline;
+}
+.projects{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 40px 20vh;
+}
+.header{
+    height: 100vh;
+}
+.nav{
+    z-index: 200;
+    transition: all 200ms;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 80px;
+    position: fixed;
+    top: 0; right: 0; left: 0;
+}
+.nav .nav-menu{
+    display: flex;
+}
+.nav > .nav-menu .nav-item{
+    font-family: Couture;
+    padding: 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    color: black;
+}
+.nav-menu > a{
+    text-decoration: none;
+}
+.logo > .img{
+    height: 100%;
+}
+.logo{
+    height: 65%;
+}
+.hero{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+}
+.hero > .text{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    width: 50%;
+    padding: 40px 5%;
+}
+.last-name{
+    margin-top: -30px;
+}
+.hero > .text > .description{
+    font-family: Gebril;
+    font-size: 30px;
+}
+.hero > .text > .header-text *{
+    font-family: Gebril;
+    font-size: 60px;
+}
+.scroll *{
+    font-family: Gebril;
+    font-size: 20px;
+}
+.scroll{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    left:50%; bottom: 5%;
+    transform: translateX(-50%);
+}
+.scroll > .down-arrow{
+    height: 50px;
+    padding: 7px;
+    cursor: pointer;
+    animation: float 1s ease-in-out infinite alternate;
+}
+@keyframes float {
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(25%);
+    }
+}
+.nav.solid{
+    background-color: rgb(194, 194, 194);
+}
+.personal-description{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50vh;
+}
+.personal-description .info-card, .personal-description .side-pic{
+    height: 75%;
+    width: 0;
+    background-color: #284b63;
+    box-shadow: 5px 5px 0px white;
+    position: relative;
+    left: 70px;
+    z-index: 50;
+}
+.personal-description .side-pic{
+    z-index: 40;
+    top: 40px; left: -70px;
+}
+.personal-description .content{
+    height: 100%;
+    width: 0;
+    background-color: #e5e5e5;
+    overflow: hidden;
+}
+.personal-description .content .inner-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 520px;
+    height: 100%;
+    padding: 20px 40px;
+    position: relative;
+}
+.personal-description .content *{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+.list{
+    margin: 20px;
+}
+.list-item{
+    padding: 15px;
+    border-bottom: #909090 1px solid;
+}
+.list-item.first{
+    border-top: #909090 1px solid;
+}
+.side-img{
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    z-index: 30;
+}
+.dimmer{
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 40;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.personal-description .content .title{
+    margin: 10px 20px;
+    font-size: 35px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100;
+    color: rgb(80, 80, 80);
+}
+section{
+    max-width: 1200px;
+}
+
+@keyframes appear {
+    from{
+        width: 0;
+    }
+    to{
+        width: 600px;
+    }
+}
+
+

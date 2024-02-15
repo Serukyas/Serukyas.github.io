@@ -218,7 +218,7 @@ body{
     box-shadow: 0 6px #303030;
 }
 .personal-description{
-    min-height: 80vh;
+    min-height: 450px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -227,8 +227,7 @@ body{
 }
 .personal-description .info-card, .personal-description .side-pic{
     height: 60vw;
-    /* max-height: 600px; */
-    max-height: 60vh;
+    max-height: 450px;
     background-color: #284b63;
     box-shadow: 5px 5px 0px white;
     position: relative;

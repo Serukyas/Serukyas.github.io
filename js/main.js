@@ -7,7 +7,7 @@ const smallerBoxes = document.querySelectorAll('.personal-description > * > *');
 
 function scroll_custom(){
     window.scroll({
-        top: window.innerHeight,
+        top: hero.offsetHeight - navbar.offsetHeight,
         behavior: "smooth"
     })
 }
